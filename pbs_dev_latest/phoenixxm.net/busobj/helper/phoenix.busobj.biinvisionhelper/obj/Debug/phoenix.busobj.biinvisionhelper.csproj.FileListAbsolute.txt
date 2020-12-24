@@ -1,0 +1,8 @@
+C:\US2020\pbs\hackathon2020\pbs_dev_latest\phoenixxm.net\busobj\helper\phoenix.busobj.biinvisionhelper\bin\Debug\phoenix.busobj.biinvisionhelper.dll
+C:\US2020\pbs\hackathon2020\pbs_dev_latest\phoenixxm.net\busobj\helper\phoenix.busobj.biinvisionhelper\bin\Debug\phoenix.busobj.biinvisionhelper.pdb
+C:\US2020\pbs\hackathon2020\pbs_dev_latest\phoenixxm.net\busobj\helper\phoenix.busobj.biinvisionhelper\bin\Debug\Newtonsoft.Json.dll
+C:\US2020\pbs\hackathon2020\pbs_dev_latest\phoenixxm.net\busobj\helper\phoenix.busobj.biinvisionhelper\obj\Debug\phoenix.busobj.biinvisionhelper.csprojAssemblyReference.cache
+C:\US2020\pbs\hackathon2020\pbs_dev_latest\phoenixxm.net\busobj\helper\phoenix.busobj.biinvisionhelper\obj\Debug\phoenix.busobj.biinvisionhelper.csproj.CoreCompileInputs.cache
+C:\US2020\pbs\hackathon2020\pbs_dev_latest\phoenixxm.net\busobj\helper\phoenix.busobj.biinvisionhelper\obj\Debug\phoenix.busobj.biinvisionhelper.csproj.CopyComplete
+C:\US2020\pbs\hackathon2020\pbs_dev_latest\phoenixxm.net\busobj\helper\phoenix.busobj.biinvisionhelper\obj\Debug\phoenix.busobj.biinvisionhelper.dll
+C:\US2020\pbs\hackathon2020\pbs_dev_latest\phoenixxm.net\busobj\helper\phoenix.busobj.biinvisionhelper\obj\Debug\phoenix.busobj.biinvisionhelper.pdb

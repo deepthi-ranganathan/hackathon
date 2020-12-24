@@ -1,0 +1,15 @@
+C:\US2020\pbs\hackathon2020\pbs_dev_latest\phoenixxm.net\busobj\helper\phoenix.busobj.lnhelper\bin\Debug\phoenix.busobj.lnhelper.dll
+C:\US2020\pbs\hackathon2020\pbs_dev_latest\phoenixxm.net\busobj\helper\phoenix.busobj.lnhelper\bin\Debug\phoenix.busobj.lnhelper.pdb
+C:\US2020\pbs\hackathon2020\pbs_dev_latest\phoenixxm.net\busobj\helper\phoenix.busobj.lnhelper\bin\Debug\phoenix.framework.busframe.dll
+C:\US2020\pbs\hackathon2020\pbs_dev_latest\phoenixxm.net\busobj\helper\phoenix.busobj.lnhelper\bin\Debug\phoenix.framework.core.dll
+C:\US2020\pbs\hackathon2020\pbs_dev_latest\phoenixxm.net\busobj\helper\phoenix.busobj.lnhelper\bin\Debug\phoenix.framework.shared.variables.dll
+C:\US2020\pbs\hackathon2020\pbs_dev_latest\phoenixxm.net\busobj\helper\phoenix.busobj.lnhelper\bin\Debug\Newtonsoft.Json.dll
+C:\US2020\pbs\hackathon2020\pbs_dev_latest\phoenixxm.net\busobj\helper\phoenix.busobj.lnhelper\bin\Debug\phoenix.framework.busframe.pdb
+C:\US2020\pbs\hackathon2020\pbs_dev_latest\phoenixxm.net\busobj\helper\phoenix.busobj.lnhelper\bin\Debug\phoenix.framework.busframe.xml
+C:\US2020\pbs\hackathon2020\pbs_dev_latest\phoenixxm.net\busobj\helper\phoenix.busobj.lnhelper\bin\Debug\phoenix.framework.core.pdb
+C:\US2020\pbs\hackathon2020\pbs_dev_latest\phoenixxm.net\busobj\helper\phoenix.busobj.lnhelper\bin\Debug\phoenix.framework.core.xml
+C:\US2020\pbs\hackathon2020\pbs_dev_latest\phoenixxm.net\busobj\helper\phoenix.busobj.lnhelper\bin\Debug\phoenix.framework.shared.variables.pdb
+C:\US2020\pbs\hackathon2020\pbs_dev_latest\phoenixxm.net\busobj\helper\phoenix.busobj.lnhelper\obj\Debug\phoenix.busobj.lnhelper.csproj.CoreCompileInputs.cache
+C:\US2020\pbs\hackathon2020\pbs_dev_latest\phoenixxm.net\busobj\helper\phoenix.busobj.lnhelper\obj\Debug\phoenix.busobj.lnhelper.csproj.CopyComplete
+C:\US2020\pbs\hackathon2020\pbs_dev_latest\phoenixxm.net\busobj\helper\phoenix.busobj.lnhelper\obj\Debug\phoenix.busobj.lnhelper.dll
+C:\US2020\pbs\hackathon2020\pbs_dev_latest\phoenixxm.net\busobj\helper\phoenix.busobj.lnhelper\obj\Debug\phoenix.busobj.lnhelper.pdb

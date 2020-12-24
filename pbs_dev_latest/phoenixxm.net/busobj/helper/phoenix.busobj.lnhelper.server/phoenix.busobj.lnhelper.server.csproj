@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="15.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DDAE8C45-698D-462F-9DD0-A6868675AB3D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>phoenix.busobj.lnhelper.server</RootNamespace>
+    <AssemblyName>phoenix.busobj.lnhelper.server</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="phoenix.framework.busframe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL" />
+    <Reference Include="phoenix.framework.core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL" />
+    <Reference Include="phoenix.framework.shared.variables, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL" />
+    <Reference Include="phoenix.framework.translation, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL" />
+    <Reference Include="phoenix.shared.constants, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\common\commonassemblyinfo.cs">
+      <Link>commonassemblyinfo.cs</Link>
+    </Compile>
+    <Compile Include="lnhelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\phoenix.busobj.gbhelper.server\phoenix.busobj.gbhelper.server.csproj">
+      <Project>{025bb450-408a-4636-b9c3-71d5ff6218ed}</Project>
+      <Name>phoenix.busobj.gbhelper.server</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\phoenix.busobj.gbhelper\phoenix.busobj.gbhelper.csproj">
+      <Project>{e23242a1-44de-4ffe-8ba5-8ba33d8a7998}</Project>
+      <Name>phoenix.busobj.gbhelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\phoenix.busobj.lnhelper\phoenix.busobj.lnhelper.csproj">
+      <Project>{F0260C54-B95B-44B2-B4A8-492B04414404}</Project>
+      <Name>phoenix.busobj.lnhelper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties CopyToOutDir="True" CopyToWsvcsbin="False" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

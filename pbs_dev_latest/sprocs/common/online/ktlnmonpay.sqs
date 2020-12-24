@@ -1,0 +1,75 @@
+/*
+*	FILE NAME: psp_cust_loan_payment.sqs - MSSQL VERSION
+*
+*	DESCRIPTION: Computes the total exposure for a customer.
+*
+*	ERROR NUMBERS:		611532 - 611582
+*	Last Error used:	611545
+*
+*	Date		Version		Person				Change
+*	-----------------------------------------------------------------------------------------------------------
+*	7/3/2007	1			Akhil				Hackathon
+*/
+
+IF OBJECT_ID('dbo.psp_cust_loan_payment') IS NOT NULL
+BEGIN
+    DROP PROCEDURE dbo.psp_cust_loan_payment
+    IF OBJECT_ID('dbo.psp_cust_loan_payment') IS NOT NULL
+        PRINT '<<< FAILED DROPPING PROCEDURE dbo.psp_cust_loan_payment >>>'
+    ELSE
+        PRINT '<<< DROPPED PROCEDURE dbo.psp_cust_loan_payment >>>'
+END
+go
+SET ANSI_NULLS OFF
+go
+SET QUOTED_IDENTIFIER OFF
+go
+
+CREATE PROC psp_cust_loan_payment 4401
+	/* Version = 17, File = kttotexpo.sqs */
+	@pnRimNo            	int
+As
+Declare
+@dtProcessDt smalldatetime
+
+
+Select @dtProcessDt = cur_proc_date from ov_control
+;with bills as
+(
+select rim_no,bill.acct_type,bill.acct_no,bill.status,bill.amt,YEAR( pmt_due_dt)as year,MONTH(pmt_due_dt)as month from ln_acct acct 
+join ln_bill bill on acct.acct_type = bill.acct_type and acct.acct_no= bill.acct_no
+where rim_no = @pnRimNo and  pmt_due_dt>=Dateadd(month ,-6,@dtProcessDt)
+),
+ payment as
+(
+select  rim_no,acct_type,acct_no,year ,month,
+sum(amt)totalAmount,
+sum(case when status ='satisfied' then amt else 0 end)Paid
+from bills 
+group by rim_no,acct_type,acct_no,year ,month 
+
+)
+select rim_no,year,month,SUM(paid)paid,SUM(unPaid+lateFee)unPaid,COUNT(acct_no) loans
+from payment 
+where year = year(@dtProcessDt)
+group by rim_no,year ,month  order by rim_no,year ,month
+
+
+
+IF OBJECT_ID('psp_cust_loan_payment') IS NOT NULL
+    PRINT '<<< CREATED PROCEDURE psp_cust_loan_payment >>>'
+
+ELSE
+    PRINT '<<< FAILED CREATING PROCEDURE psp_cust_loan_payment >>>'
+go
+SET ANSI_NULLS OFF
+go
+SET QUOTED_IDENTIFIER OFF
+go
+IF OBJECT_ID('dbo.psp_cust_loan_payment') IS NOT NULL
+    PRINT '<<< CREATED PROCEDURE dbo.psp_cust_loan_payment >>>'
+ELSE
+    PRINT '<<< FAILED CREATING PROCEDURE dbo.psp_cust_loan_payment >>>'
+go
+GRANT EXECUTE ON dbo.psp_cust_loan_payment TO grp_private
+go

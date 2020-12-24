@@ -1,0 +1,475 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="15.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{05908290-3B60-4C4A-B45E-1D6B20BEBCF9}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>phoenix.client.tltrancode</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Phoenix.Client.TlTranCode</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <FileAlignment>4096</FileAlignment>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\phoenix.client.tltrancode.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <Optimize>true</Optimize>
+    <FileAlignment>4096</FileAlignment>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\phoenix.client.tltrancode.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\latest\output\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Phoenix.BusObj.AccountHistory">
+      <Name>Phoenix.BusObj.AccountHistory</Name>
+      <AssemblyFolderKey>hklm\sharkassemblies</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="phoenix.busobj.achnochistory, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="phoenix.busobj.adchktype, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL" />
+    <Reference Include="phoenix.busobj.adgbbank, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="phoenix.busobj.adgbbankcontrol, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL" />
+    <Reference Include="phoenix.busobj.adgbinterface, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="phoenix.busobj.adgbinventorypacket, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL" />
+    <Reference Include="phoenix.busobj.adgbinventorytype, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL" />
+    <Reference Include="phoenix.busobj.adgbrsm">
+      <Name>phoenix.busobj.adgbrsm</Name>
+      <AssemblyFolderKey>hklm\sharkassemblies</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="phoenix.busobj.adgbrsmfailedaccess">
+      <Name>phoenix.busobj.adgbrsmfailedaccess</Name>
+      <AssemblyFolderKey>hklm\sharkassemblies</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="phoenix.busobj.adgbrsmlimits">
+      <Name>phoenix.busobj.adgbrsmlimits</Name>
+      <AssemblyFolderKey>hklm\sharkassemblies</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="phoenix.busobj.adrmcontrol, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL" />
+    <Reference Include="phoenix.busobj.adrmrestrict, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="phoenix.busobj.adtlcls">
+      <Name>phoenix.busobj.adtlcls</Name>
+      <AssemblyFolderKey>hklm\sharkassemblies</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="phoenix.busobj.adtlcontrol">
+      <Name>phoenix.busobj.adtlcontrol</Name>
+      <AssemblyFolderKey>hklm\sharkassemblies</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="phoenix.busobj.adtlform, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="phoenix.busobj.adtlformmttran, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="phoenix.busobj.adtltc">
+      <Name>phoenix.busobj.adtltc</Name>
+      <AssemblyFolderKey>hklm\sharkassemblies</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="phoenix.busobj.adtltcform, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="phoenix.busobj.adxpsvcs, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL" />
+    <Reference Include="phoenix.busobj.customersearch, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Phoenix.BusObj.Deposit, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="phoenix.busobj.dpacct, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="phoenix.busobj.exacct, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="phoenix.busobj.gbholdstop, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="phoenix.busobj.lnacct, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL" />
+    <Reference Include="phoenix.busobj.rmacct, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="phoenix.busobj.dpredempcalc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL" />
+    <Reference Include="phoenix.busobj.eforms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL" />
+    <Reference Include="phoenix.busobj.gbbondpurchase, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL" />
+    <Reference Include="phoenix.busobj.gbbondredempthistory, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="phoenix.busobj.gbfraudlog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL" />
+    <Reference Include="phoenix.busObj.gbhelper">
+      <Name>phoenix.busObj.gbhelper</Name>
+      <AssemblyFolderKey>hklm\sharkassemblies</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="phoenix.busobj.gbinventoryitem, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL" />
+    <Reference Include="phoenix.busobj.gbmemo, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="phoenix.busobj.glacct, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL" />
+    <Reference Include="phoenix.busobj.pccustomoptions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL" />
+    <Reference Include="phoenix.busobj.reportoutput, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="phoenix.busobj.runsqrreport, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Phoenix.BusObj.TlAcctDetails">
+      <Name>phoenix.busobj.tlacctdetails</Name>
+      <AssemblyFolderKey>hklm\sharkassemblies</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="phoenix.busobj.tlcapturebulktran, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL" />
+    <Reference Include="phoenix.busobj.tlcashcount, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="phoenix.busobj.tlcc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL" />
+    <Reference Include="phoenix.busobj.tlchkform, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL" />
+    <Reference Include="phoenix.busobj.tldrawer, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Phoenix.BusObj.TlHelper">
+      <Name>Phoenix.BusObj.TlHelper</Name>
+      <AssemblyFolderKey>hklm\sharkassemblies</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="phoenix.busobj.tlitemcapture, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL" />
+    <Reference Include="phoenix.busobj.tljournal">
+      <Name>phoenix.busobj.tljournal</Name>
+      <AssemblyFolderKey>hklm\sharkassemblies</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="phoenix.busobj.tljournaladdlinfo, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL" />
+    <Reference Include="phoenix.busobj.tljournalovrd">
+      <Name>phoenix.busobj.tljournalovrd</Name>
+      <AssemblyFolderKey>hklm\sharkassemblies</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="phoenix.busobj.tlnonrmacct, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL" />
+    <Reference Include="Phoenix.BusObj.TlTransaction">
+      <Name>phoenix.busobj.tltransaction</Name>
+      <AssemblyFolderKey>hklm\sharkassemblies</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="Phoenix.BusObj.TlTransactionSet">
+      <Name>phoenix.busobj.tltransactionset</Name>
+      <AssemblyFolderKey>hklm\sharkassemblies</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="phoenix.busobj.xpcontrol">
+      <Name>phoenix.busobj.xpcontrol</Name>
+      <AssemblyFolderKey>hklm\sharkassemblies</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="phoenix.busobj.xprmsvcsacct, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL" />
+    <Reference Include="phoenix.client.helper">
+      <Name>phoenix.client.helper</Name>
+      <AssemblyFolderKey>hklm\sharkassemblies</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="phoenix.client.invisionproductoffer, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="phoenix.client.messenger">
+      <Name>phoenix.client.messenger</Name>
+      <AssemblyFolderKey>hklm\sharkassemblies</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="phoenix.client.msgbox, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL" />
+    <Reference Include="phoenix.client.rimaccounts">
+      <Name>phoenix.client.rimaccounts</Name>
+      <AssemblyFolderKey>hklm\sharkassemblies</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="phoenix.client.tbarsearch">
+      <Name>phoenix.client.tbarsearch</Name>
+      <AssemblyFolderKey>hklm\sharkassemblies</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="phoenix.client.tlhelper, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="phoenix.frameWork.authentication, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c" />
+    <Reference Include="phoenix.framework.busframe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL" />
+    <Reference Include="phoenix.framework.CDS">
+      <Name>phoenix.framework.CDS</Name>
+      <AssemblyFolderKey>hklm\sharkassemblies</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="phoenix.framework.core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL" />
+    <Reference Include="phoenix.framework.shared.variables">
+      <Name>phoenix.framework.shared.variables</Name>
+      <AssemblyFolderKey>hklm\sharkassemblies</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="Phoenix.Hyland.Service, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL" />
+    <Reference Include="phoenix.shared.busframe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL" />
+    <Reference Include="phoenix.shared.constants">
+      <Name>Phoenix.Shared.Constants</Name>
+      <AssemblyFolderKey>hklm\sharkassemblies</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="Phoenix.Shared.HostedEnv">
+      <Name>Phoenix.Shared.HostedEnv</Name>
+      <AssemblyFolderKey>hklm\sharkassemblies</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="phoenix.shared.images">
+      <Name>phoenix.shared.images</Name>
+      <AssemblyFolderKey>hklm\sharkassemblies</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="Phoenix.Shared.PED, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Phoenix.Shared.Ucm, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL" />
+    <Reference Include="Phoenix.Shared.Utility, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL" />
+    <Reference Include="phoenix.shared.variables, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL">
+      <Aliases>sharedvars</Aliases>
+    </Reference>
+    <Reference Include="phoenix.shared.variables.teller">
+      <Name>phoenix.shared.variables.teller</Name>
+      <AssemblyFolderKey>hklm\sharkassemblies</AssemblyFolderKey>
+      <Aliases>global</Aliases>
+    </Reference>
+    <Reference Include="Phoenix.Shared.Windows">
+      <Name>Phoenix.Shared.Windows</Name>
+      <AssemblyFolderKey>hklm\sharkassemblies</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="Phoenix.Shared.Xfs, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL" />
+    <Reference Include="Phoenix.Shared.Xfs.PrintInfo">
+      <Name>Phoenix.Shared.Xfs.PrintInfo</Name>
+      <AssemblyFolderKey>hklm\sharkassemblies</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="phoenix.windows.browser, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL" />
+    <Reference Include="phoenix.windows.forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL" />
+    <Reference Include="Phoenix.Windows.Forms.Dx, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\framework\output\Phoenix.Windows.Forms.Dx.dll</HintPath>
+    </Reference>
+    <Reference Include="phoenix.wsvcs.authentication, Version=2.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL" />
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\..\common\commonassemblyinfo.cs">
+      <Link>commonassemblyinfo.cs</Link>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="dlgAcctNicknames.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgLastAccts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgPEDSignatureCapture.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgPEDSignatureCapture.designer.cs">
+      <DependentUpon>dlgPEDSignatureCapture.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dlgShBranchTCDOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgShBranchTCDOptions.Designer.cs">
+      <DependentUpon>dlgShBranchTCDOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmShBranchBrowserHost.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmShBranchBrowserHost.designer.cs">
+      <DependentUpon>frmShBranchBrowserHost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTlCaptureBulkTran.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTlCaptureBulkTran.Designer.cs">
+      <DependentUpon>frmTlCaptureBulkTran.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTlTranCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTlTranCode.Methods.cs">
+      <DependentUpon>frmTlTranCode.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInventoryItemPurchaseReturnDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInventoryItemPurchaseReturnDetail.Designer.cs">
+      <DependentUpon>frmInventoryItemPurchaseReturnDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TestInterproUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestInterproUI.designer.cs">
+      <DependentUpon>TestInterproUI.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="dlgAcctNicknames.resx">
+      <DependentUpon>dlgAcctNicknames.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dlgLastAccts.resx">
+      <DependentUpon>dlgLastAccts.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dlgPEDSignatureCapture.resx">
+      <DependentUpon>dlgPEDSignatureCapture.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dlgShBranchTCDOptions.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>dlgShBranchTCDOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmShBranchBrowserHost.resx">
+      <DependentUpon>frmShBranchBrowserHost.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTlCaptureBulkTran.resx">
+      <DependentUpon>frmTlCaptureBulkTran.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTlTranCode.resx">
+      <DependentUpon>frmTlTranCode.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInventoryItemPurchaseReturnDetail.resx">
+      <DependentUpon>frmInventoryItemPurchaseReturnDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestInterproUI.resx">
+      <DependentUpon>TestInterproUI.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\phoenix.client.tlprinting\phoenix.client.tlprinting.csproj">
+      <Project>{8D1946D9-8C4E-41E1-9481-A75565492B21}</Project>
+      <Name>phoenix.client.tlprinting</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Phoenix.MultiTranTeller.Base\Phoenix.MultiTranTeller.Base.csproj">
+      <Project>{b7fa46f8-87f9-4715-9e5e-ba207b399e2f}</Project>
+      <Name>Phoenix.MultiTranTeller.Base</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties CopyToWsvcsbin="False" CopyToOutDir="True" />
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

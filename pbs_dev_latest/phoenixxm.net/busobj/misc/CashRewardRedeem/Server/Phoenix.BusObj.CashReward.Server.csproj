@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{72C31847-4822-4E39-9ACD-02785C7E521A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Phoenix.BusObj.Misc.Server</RootNamespace>
+    <AssemblyName>Phoenix.BusObj.CashReward.Server</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="phoenix.busobj.adgbtc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\pbs_Framework_latest\output\phoenix.busobj.adgbtc.dll</HintPath>
+    </Reference>
+    <Reference Include="phoenix.busObj.gbhelper, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\pbs_Framework_latest\output\phoenix.busObj.gbhelper.dll</HintPath>
+    </Reference>
+    <Reference Include="phoenix.busobj.gbhelper.server, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\pbs_Framework_latest\output\phoenix.busobj.gbhelper.server.dll</HintPath>
+    </Reference>
+    <Reference Include="phoenix.framework.busframe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\pbs_Framework_latest\output\phoenix.framework.busframe.dll</HintPath>
+    </Reference>
+    <Reference Include="phoenix.framework.core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\pbs_Framework_latest\output\phoenix.framework.core.dll</HintPath>
+    </Reference>
+    <Reference Include="phoenix.framework.shared.variables, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\pbs_Framework_latest\output\phoenix.framework.shared.variables.dll</HintPath>
+    </Reference>
+    <Reference Include="phoenix.shared.busframe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\pbs_Framework_latest\output\phoenix.shared.busframe.dll</HintPath>
+    </Reference>
+    <Reference Include="phoenix.shared.constants, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\pbs_Framework_latest\output\phoenix.shared.constants.dll</HintPath>
+    </Reference>
+    <Reference Include="Phoenix.Shared.Utility, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\pbs_Framework_latest\output\Phoenix.Shared.Utility.dll</HintPath>
+    </Reference>
+    <Reference Include="phoenix.shared.variables, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\pbs_Framework_latest\output\phoenix.shared.variables.dll</HintPath>
+    </Reference>
+    <Reference Include="phoenix.windows.forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\pbs_Framework_latest\output\phoenix.windows.forms.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\..\common\commonassemblyinfo.cs">
+      <Link>commonassemblyinfo.cs</Link>
+    </Compile>
+    <Compile Include="CashReward.Server.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Client\Phoenix.BusObj.CashReward.csproj">
+      <Project>{03b2f401-35ca-48d9-a17e-40f50181b4a0}</Project>
+      <Name>Phoenix.BusObj.CashReward</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

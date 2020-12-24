@@ -1,0 +1,582 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Phoenix.FrameWork.Adapter</name>
+    </assembly>
+    <members>
+        <member name="T:Phoenix.FrameWork.Adapter.AdapterDomain">
+            <summary>
+            Adapter Domain.
+            All adapters related operation will be loaded into individual domains
+            </summary>
+        </member>
+        <member name="P:Phoenix.FrameWork.Adapter.AdapterDomain.Provider">
+            <summary>
+            Get the provider for the adapter
+            </summary>
+        </member>
+        <member name="P:Phoenix.FrameWork.Adapter.AdapterDomain.Name">
+            <summary>
+            Name of the adapter.  
+            if no configuration is not found then Uknown will be returned
+            </summary>
+        </member>
+        <member name="M:Phoenix.FrameWork.Adapter.AdapterDomain.CreateAdapter(System.String,System.String,System.String,System.String)">
+            <summary>
+            Create Adapter 
+            </summary>
+            <param name="baseDir"></param>
+            <param name="assemblyName"></param>
+            <param name="typeName"></param>
+            <param name="appDomainName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Phoenix.FrameWork.Adapter.AdapterDomain.CreatAppDomain(System.String)">
+            <summary>
+            Create the adapter domain
+            </summary>
+            <param name="appDomainName"></param>
+        </member>
+        <member name="M:Phoenix.FrameWork.Adapter.AdapterDomain.CreateObjectInDomain(System.String,System.String)">
+            <summary>
+            Create an object in a domain
+            </summary>
+            <param name="assemblyName"></param>
+            <param name="typeName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Phoenix.FrameWork.Adapter.AdapterDomain.Initialize(System.String,Phoenix.FrameWork.Config.AdapterDef,System.String,System.String,System.String,System.String)">
+            <summary>
+            Initialize the domain
+            </summary>
+            <param name="baseDirectory"></param>
+            <param name="configuration"></param>
+            <param name="connectionString"></param>
+            <param name="connectionStringFull"></param>
+            <param name="appSetting"></param>
+            <param name="busGlobalVars">business global variables</param>
+            <returns>returns 0 when success</returns>
+        </member>
+        <member name="M:Phoenix.FrameWork.Adapter.AdapterDomain.UnloadDomain">
+            <summary>
+            Unload the domain
+            </summary>
+        </member>
+        <member name="M:Phoenix.FrameWork.Adapter.AdapterDomain.StartPolling">
+            <summary>
+            Start the polling for this domain
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Phoenix.FrameWork.Adapter.AdapterDomain.StopPolling">
+            <summary>
+            Stop the polling under this domain
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Phoenix.FrameWork.Adapter.AdapterDomain.Dispose(System.Boolean)">
+            <summary>
+            dispose the object
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="M:Phoenix.FrameWork.Adapter.AdapterDomain.GetStatus">
+            <summary>
+            Returns the status Xml
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Phoenix.FrameWork.Adapter.AdapterDomain.StopThread(System.Int32)">
+            <summary>
+            Stop a thread running under this domain
+            </summary>
+            <param name="threadId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Phoenix.FrameWork.Adapter.AdapterDomain.Dispose">
+            <summary>
+            Dispose the object
+            </summary>
+        </member>
+        <member name="T:Phoenix.FrameWork.Adapter.AdapterPollingAgent">
+            <summary>
+            Adapter polling agent default implementation
+            </summary>
+        </member>
+        <member name="M:Phoenix.FrameWork.Adapter.AdapterPollingAgent.#ctor">
+            <summary>
+            simple constructor
+            </summary>
+        </member>
+        <member name="M:Phoenix.FrameWork.Adapter.AdapterPollingAgent.#ctor(Phoenix.Shared.Adapter.V1.AdapterProvider)">
+            <summary>
+            constructor with adapter provider
+            </summary>
+            <param name="ap"></param>
+        </member>
+        <member name="M:Phoenix.FrameWork.Adapter.AdapterPollingAgent.Initialize(Phoenix.Shared.Adapter.V1.AdapterProvider)">
+            <summary>
+            Initialize the polling agent
+            </summary>
+            <param name="provider"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Phoenix.FrameWork.Adapter.AdapterPollingAgent.GetNextMsgProcessor">
+            <summary>
+            get the next message processor
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Phoenix.FrameWork.Adapter.AdapterPollingAgent.InitConnectionString(System.String)">
+            <summary>
+            Innitialize the connection string
+            </summary>
+            <param name="connectionString"></param>
+        </member>
+        <member name="T:Phoenix.FrameWork.Adapter.AdapterProviderFactory">
+            <summary>
+            Adapter provider factory
+            </summary>
+        </member>
+        <member name="M:Phoenix.FrameWork.Adapter.AdapterProviderFactory.GetAdapterProvider(System.String,Phoenix.FrameWork.Core.IDbHelper,System.Boolean)">
+            <summary>
+            Get the Adapter provider 
+            </summary>
+            <param name="exAcctType"></param>
+            <param name="dbHelper"></param>
+            <param name="dbToUse"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Phoenix.FrameWork.Adapter.DbHelper">
+            <summary>
+            Adapter db herper
+            </summary>
+        </member>
+        <member name="M:Phoenix.FrameWork.Adapter.DbHelper.GetConnection(System.String)">
+            <summary>
+            Get a new connection using the connection string.
+            </summary>
+            <param name="connectionString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Phoenix.FrameWork.Adapter.DbHelper.GetCommand(System.Data.IDbConnection)">
+            <summary>
+            get a Db
+            </summary>
+            <param name="connection"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Phoenix.FrameWork.Adapter.DbHelper.GetCommand(System.Data.IDbTransaction)">
+            <summary>
+            get the new command for the transaction
+            </summary>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Phoenix.FrameWork.Adapter.DbHelper.Initialize(System.String,System.String,System.String)">
+            <summary>
+            Innitialize the Dbhelper
+            </summary>
+            <param name="relGroupname"></param>
+            <param name="dbDefName"></param>
+            <param name="configFileName">COnfiguration file to initialize</param>
+        </member>
+        <member name="P:Phoenix.FrameWork.Adapter.DbHelper.DbPrefix">
+            <summary>
+            Gets the DbPrefix
+            </summary>
+        </member>
+        <member name="P:Phoenix.FrameWork.Adapter.DbHelper.PhoenixDbName">
+            <summary>
+            returns the phoenix db name
+            </summary>
+        </member>
+        <member name="P:Phoenix.FrameWork.Adapter.DbHelper.IsPrimaryDbAvailable">
+            <summary>
+            returns the availibility of primary db
+            </summary>
+        </member>
+        <member name="T:Phoenix.FrameWork.Adapter.ErrorCodes">
+            <summary>
+            Error Code definition
+            </summary>
+        </member>
+        <member name="F:Phoenix.FrameWork.Adapter.ErrorCodes.ADAPTER_DEF_NULL">
+            <summary>
+            Adapter definition is null
+            </summary>
+        </member>
+        <member name="F:Phoenix.FrameWork.Adapter.ErrorCodes.INVALID_PROVIDER_NAME">
+            <summary>
+            Provider name passed in invalid
+            </summary>
+        </member>
+        <member name="F:Phoenix.FrameWork.Adapter.ErrorCodes.DOM_INIT_ERROR">
+            <summary>
+            Unable to initialize the domain for adapter
+            </summary>
+        </member>
+        <member name="F:Phoenix.FrameWork.Adapter.ErrorCodes.ADAPTER_NOT_FOUND">
+            <summary>
+            Unable to identify the adapter
+            </summary>
+        </member>
+        <member name="T:Phoenix.FrameWork.Adapter.IThreadPool">
+            <summary>
+            Thread pool interface
+            </summary>
+        </member>
+        <member name="P:Phoenix.FrameWork.Adapter.IThreadPool.Name">
+            <summary>
+            Name of the thread pool
+            </summary>
+        </member>
+        <member name="M:Phoenix.FrameWork.Adapter.IThreadPool.Initialize(Phoenix.Shared.Adapter.V1.IAdapterProvider,System.String)">
+            <summary>
+            Initialize the thread pool
+            </summary>
+            <param name="provider"></param>
+            <param name="connectionStringFull"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Phoenix.FrameWork.Adapter.IThreadPool.Start">
+            <summary>
+            start the thread pool
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Phoenix.FrameWork.Adapter.IThreadPool.Stop">
+            <summary>
+            Stop the thread pool
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Phoenix.FrameWork.Adapter.IThreadPool.StopThread(System.Int32)">
+            <summary>
+            Stop a specific thread from the pool
+            </summary>
+            <param name="threadId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Phoenix.FrameWork.Adapter.IThreadPool.Abort">
+            <summary>
+            Abort/Stop
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Phoenix.FrameWork.Adapter.IThreadPool.GetStatus">
+            <summary>
+            Get the status of the thread pool
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Phoenix.FrameWork.Adapter.IThreadInfo">
+            <summary>
+            Thread Information
+            </summary>
+        </member>
+        <member name="P:Phoenix.FrameWork.Adapter.IThreadInfo.ThreadId">
+            <summary>
+            Thread Id
+            </summary>
+        </member>
+        <member name="P:Phoenix.FrameWork.Adapter.IThreadInfo.CreateDate">
+            <summary>
+            Thread creation date
+            </summary>
+        </member>
+        <member name="T:Phoenix.FrameWork.Adapter.PAdapterDomainCollection">
+            <summary>
+            Adapter domain collection
+            </summary>
+        </member>
+        <member name="M:Phoenix.FrameWork.Adapter.PAdapterDomainCollection.#ctor">
+            <summary>
+            Constructor to stop the public invocation
+            </summary>
+        </member>
+        <member name="P:Phoenix.FrameWork.Adapter.PAdapterDomainCollection.Instance">
+            <summary>
+            Adatper domain collection singleton instance
+            </summary>
+        </member>
+        <member name="M:Phoenix.FrameWork.Adapter.PAdapterDomainCollection.GetKeyForItem(Phoenix.FrameWork.Adapter.AdapterDomain)">
+            <summary>
+            Override to find the domain
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Phoenix.FrameWork.Adapter.PAdapterDomainCollection.Item(System.String)">
+            <summary>
+            Get ths adapter domain identified by the key. Returns null if the key not found.
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Phoenix.FrameWork.Adapter.AdapterPerfMonitor">
+            <summary>
+            Adapter Performance Monitor
+            </summary>
+        </member>
+        <member name="M:Phoenix.FrameWork.Adapter.AdapterPerfMonitor.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="adapterName"></param>
+        </member>
+        <member name="M:Phoenix.FrameWork.Adapter.AdapterPerfMonitor.Close">
+            <summary>
+            Close the monitor
+            </summary>
+        </member>
+        <member name="M:Phoenix.FrameWork.Adapter.AdapterPerfMonitor.Dispose">
+            <summary>
+            Dispose implementation
+            </summary>
+        </member>
+        <member name="M:Phoenix.FrameWork.Adapter.AdapterPerfMonitor.Dispose(System.Boolean)">
+            <summary>
+            Dispose pattern implementation
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="M:Phoenix.FrameWork.Adapter.AdapterPerfMonitor.MessageProcessStarted">
+            <summary>
+            Log Process Start
+            </summary>
+        </member>
+        <member name="M:Phoenix.FrameWork.Adapter.AdapterPerfMonitor.MessageCompleted(Phoenix.FrameWork.Adapter.MessageStatus,System.TimeSpan)">
+            <summary>
+            Log Process Completed
+            </summary>
+            <param name="status"></param>
+            <param name="processTime"></param>
+        </member>
+        <member name="T:Phoenix.FrameWork.Adapter.MessageStatus">
+            <summary>
+            Message Status
+            </summary>
+        </member>
+        <member name="F:Phoenix.FrameWork.Adapter.MessageStatus.Processing">
+            <summary>
+            Processing
+            </summary>
+        </member>
+        <member name="F:Phoenix.FrameWork.Adapter.MessageStatus.Success">
+            <summary>
+            Succesfully processed
+            </summary>
+        </member>
+        <member name="F:Phoenix.FrameWork.Adapter.MessageStatus.TimeOut">
+            <summary>
+            Process Timed out
+            </summary>
+        </member>
+        <member name="F:Phoenix.FrameWork.Adapter.MessageStatus.Error">
+            <summary>
+            error
+            </summary>
+        </member>
+        <member name="T:Phoenix.FrameWork.Adapter.PThreadPoolManager">
+            <summary>
+            Threadpool manager.
+            </summary>
+        </member>
+        <member name="M:Phoenix.FrameWork.Adapter.PThreadPoolManager.Initialize(System.String)">
+            <summary>
+            Initialize the threadpool 
+             - Create the threads for every adapter
+            </summary>
+            <param name="baseDir"></param>
+        </member>
+        <member name="M:Phoenix.FrameWork.Adapter.PThreadPoolManager.CreateThreads(System.String)">
+            <summary>
+            Create threads for the pool manager
+            </summary>
+            <param name="baseDir">base directory for the config file</param>
+        </member>
+        <member name="M:Phoenix.FrameWork.Adapter.PThreadPoolManager.GetStatus">
+            <summary>
+            Get the staus of all adapters running
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Phoenix.FrameWork.Adapter.PThreadPoolManager.GetAdapterNames">
+            <summary>
+            Get all adapter names
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Phoenix.FrameWork.Adapter.PThreadPoolManager.StopAdapterThread(System.String,System.Int32)">
+            <summary>
+            Stop and start the threads
+            </summary>
+            <param name="adapterName"></param>
+            <param name="threadId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Phoenix.FrameWork.Adapter.PThreadPoolManager.StopAdapterPolling(System.String)">
+            <summary>
+            Stop Adapter polling 
+            </summary>
+            <param name="adapterName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Phoenix.FrameWork.Adapter.PThreadPoolManager.StartAdapterPolling(System.String)">
+            <summary>
+            Start adapter polling
+            </summary>
+            <param name="adapterName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Phoenix.FrameWork.Adapter.PThreadPoolManager.UnloadAdapter(System.String)">
+            <summary>
+            Unload adapter
+            </summary>
+            <param name="adapterName"></param>
+        </member>
+        <member name="T:Phoenix.FrameWork.Adapter.PThreadPool">
+            <summary>
+            Phoenix Thread Pool class
+            </summary>
+        </member>
+        <member name="M:Phoenix.FrameWork.Adapter.PThreadPool.InitializeLifetimeService">
+            <summary>
+            overriden to stop dying
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Phoenix.FrameWork.Adapter.PThreadPool.Initialize(Phoenix.Shared.Adapter.V1.IAdapterProvider,System.String)">
+            <summary>
+            Initialize the thread pool
+                1. Get the poliing agent from provider
+                2. Initialize the Polling agent with the full connection string
+                3. Set the polling agent properties
+            NOTE: this will not start the agent
+            </summary>
+            <param name="provider"></param>
+            <param name="connectionStringFull"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Phoenix.FrameWork.Adapter.PThreadPool.Configuration">
+            <summary>
+            Get the Configuration
+            </summary>
+        </member>
+        <member name="P:Phoenix.FrameWork.Adapter.PThreadPool.Name">
+            <summary>
+            Get the name of the thread pool
+            </summary>
+        </member>
+        <member name="M:Phoenix.FrameWork.Adapter.PThreadPool.Start">
+            <summary>
+            Start the thread pool.
+            NOTE: Thread pool will be started only if the configuration suspend is set to false
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Phoenix.FrameWork.Adapter.PThreadPool.Stop">
+            <summary>
+            Stop the Thread pool
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Phoenix.FrameWork.Adapter.PThreadPool.StopThread(System.Int32)">
+            <summary>
+            Sop the thread identified by the threadId
+            </summary>
+            <param name="threadId"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Phoenix.FrameWork.Adapter.PThreadPool.RunningThreads">
+            <summary>
+            Returns the count of running threads
+            </summary>
+        </member>
+        <member name="P:Phoenix.FrameWork.Adapter.PThreadPool.IsSuspended">
+            <summary>
+            Returns if the threadpool is paused
+            </summary>
+        </member>
+        <member name="M:Phoenix.FrameWork.Adapter.PThreadPool.CreateWorkerItem(System.Object)">
+            <summary>
+            Create workerItem handler invoked by the timer.  Attached to
+            the timer thread
+            </summary>
+            <param name="state"></param>
+        </member>
+        <member name="M:Phoenix.FrameWork.Adapter.PThreadPool.PerformWorkItemOperation(System.Object)">
+            <summary>
+            Delegate to performa the workItem operation
+            </summary>
+            <param name="state"></param>
+        </member>
+        <member name="M:Phoenix.FrameWork.Adapter.PThreadPool.WorkItemDone(System.Int32)">
+            <summary>
+            Notifier to update the thread status
+            </summary>
+            <param name="threadId"></param>
+        </member>
+        <member name="M:Phoenix.FrameWork.Adapter.PThreadPool.WorkItemStarted(Phoenix.FrameWork.Adapter.WorkItem)">
+            <summary>
+            Notified to update the status
+            </summary>
+            <param name="workItem"></param>
+        </member>
+        <member name="M:Phoenix.FrameWork.Adapter.PThreadPool.GetStatus">
+            <summary>
+            Returns the status string
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Phoenix.FrameWork.Adapter.PThreadPool.Abort">
+            <summary>
+            Stop the threads
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Phoenix.FrameWork.Adapter.WorkItem">
+            <summary>
+            Work Item
+            </summary>
+        </member>
+        <member name="M:Phoenix.FrameWork.Adapter.WorkItem.#ctor(Phoenix.FrameWork.Adapter.PThreadPool,Phoenix.Shared.Adapter.V1.IMessageProcessor)">
+            <summary>
+            Constructor 
+            </summary>
+            <param name="threadPool"></param>
+            <param name="messageInfo"></param>
+        </member>
+        <member name="P:Phoenix.FrameWork.Adapter.WorkItem.ThreadId">
+            <summary>
+            Get the thread Id
+            </summary>
+        </member>
+        <member name="P:Phoenix.FrameWork.Adapter.WorkItem.CurrentThread">
+            <summary>
+            gets the current thread
+            </summary>
+        </member>
+        <member name="P:Phoenix.FrameWork.Adapter.WorkItem.CreateDate">
+            <summary>
+            Get/set the create date
+            </summary>
+        </member>
+        <member name="M:Phoenix.FrameWork.Adapter.WorkItem.Execute">
+            <summary>
+            Execute the action
+            </summary>
+        </member>
+        <member name="P:Phoenix.FrameWork.Adapter.WorkItem.Status">
+            <summary>
+            get the status string
+            </summary>
+        </member>
+        <member name="P:Phoenix.FrameWork.Adapter.WorkItem.ReturnCode">
+            <summary>
+            Return Code
+            </summary>
+        </member>
+    </members>
+</doc>

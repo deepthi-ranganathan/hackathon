@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="15.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{68EFFA99-27AE-4DFD-B5C1-C8A6FE06F7C2}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>phoenix.busobj.gbimagehelper.server</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Phoenix.BusObj.Global.Server</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="phoenix.busobj.adgbimagecontrol">
+      <Name>phoenix.busobj.adgbimagecontrol</Name>
+      <AssemblyFolderKey>hklm\sharkassemblies</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="phoenix.framework.busframe">
+      <Name>phoenix.framework.busframe</Name>
+      <HintPath>..\..\..\..\..\Framework\latest\output\phoenix.framework.busframe.dll</HintPath>
+      <AssemblyFolderKey>hklm\sharkassemblies</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="phoenix.framework.CDS">
+      <Name>phoenix.framework.CDS</Name>
+      <HintPath>..\..\..\..\..\Framework\latest\output\phoenix.framework.CDS.dll</HintPath>
+      <AssemblyFolderKey>hklm\sharkassemblies</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="phoenix.framework.core">
+      <Name>phoenix.framework.core</Name>
+      <HintPath>..\..\..\..\..\Framework\latest\output\phoenix.framework.core.dll</HintPath>
+      <AssemblyFolderKey>hklm\sharkassemblies</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="phoenix.framework.shared.variables">
+      <Name>phoenix.framework.shared.variables</Name>
+      <AssemblyFolderKey>hklm\sharkassemblies</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="phoenix.shared.constants">
+      <Name>phoenix.shared.constants</Name>
+      <AssemblyFolderKey>hklm\sharkassemblies</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\common\commonassemblyinfo.cs">
+      <Link>commonassemblyinfo.cs</Link>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="gbimagehelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\phoenix.busobj.gbhelper.server\phoenix.busobj.gbhelper.server.csproj">
+      <Project>{025BB450-408A-4636-B9C3-71D5FF6218ED}</Project>
+      <Name>phoenix.busobj.gbhelper.server</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\phoenix.busobj.gbhelper\phoenix.busobj.gbhelper.csproj">
+      <Project>{E23242A1-44DE-4FFE-8BA5-8BA33D8A7998}</Project>
+      <Name>phoenix.busobj.gbhelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\phoenix.busobj.gbimghelper\phoenix.busobj.gbimghelper.csproj">
+      <Project>{01625534-8527-435D-88DB-A0FB103ACF85}</Project>
+      <Name>phoenix.busobj.gbimghelper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties CopyToOutDir="True" CopyToWsvcsbin="False" />
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,117 @@
+/*
+*	FILE NAME: psp_cust_loan_payment.sqs - MSSQL VERSION
+*
+*	DESCRIPTION: Computes the total exposure for a customer.
+*
+*	ERROR NUMBERS:		611532 - 611582
+*	Last Error used:	611545
+*
+*	Date		Version		Person				Change
+*	-----------------------------------------------------------------------------------------------------------
+*	7/3/2007	1			Akhil				Hackathon
+*/
+
+IF OBJECT_ID('dbo.psp_get_cust_analysis') IS NOT NULL
+BEGIN
+    DROP PROCEDURE dbo.psp_get_cust_analysis
+    IF OBJECT_ID('dbo.psp_get_cust_analysis') IS NOT NULL
+        PRINT '<<< FAILED DROPPING PROCEDURE dbo.psp_get_cust_analysis >>>'
+    ELSE
+        PRINT '<<< DROPPED PROCEDURE dbo.psp_get_cust_analysis >>>'
+END
+go
+SET ANSI_NULLS OFF
+go
+SET QUOTED_IDENTIFIER OFF
+go
+
+CREATE proc psp_get_cust_analysis
+/* Version = 3 - KTCLCTRM.SQS */
+@pnRimNo int,
+@pnConfigParam int
+as
+Declare
+@dtProcessDt smalldatetime
+
+Select @dtProcessDt = cur_proc_date from ov_control
+if @pnConfigParam = 0
+Begin
+	if exists(select 1
+	from atm_acct where ltrim(rtrim(status)) = 'Active' and rim_no = @pnRimNo and last_sys_maint_dt<=Dateadd(MONTH ,-6,@dtProcessDt))
+	Begin
+		return 1
+	End
+	if exists(Select 1 From
+	DP_OD_HISTORY H inner join dp_acct A on A.acct_no = H.acct_no and A.acct_type = H.acct_type
+	Where A.rim_no = @pnRimNo and year(H.EFFECTIVE_DT) = year(@dtProcessDt))
+	Begin
+		return 1
+	End
+	if exists(select rim_no,bill.acct_type,bill.acct_no,bill.status,bill.amt,YEAR( pmt_due_dt)as year,MONTH(pmt_due_dt)as month from ln_acct acct 
+				join ln_bill bill on acct.acct_type = bill.acct_type and acct.acct_no= bill.acct_no
+				where acct.status= 'Active' and bill.status != 'Satisfied'and pmt_due_dt>=Dateadd(year ,-1,@dtProcessDt) and rim_no = @pnRimNo)
+	Begin
+		return 1
+	End
+	
+End
+if @pnConfigParam = 1
+Begin
+	select 'Active card- Not used since 6 months' as 'Description', 1 as 'case_id'
+	from atm_acct where ltrim(rtrim(status)) = 'Active' and rim_no = @pnRimNo and last_sys_maint_dt<=Dateadd(MONTH ,-6,@dtProcessDt)
+	union
+	Select 'OD applied' as 'Description', 2 as 'case_id' From
+	DP_OD_HISTORY H inner join dp_acct A on A.acct_no = H.acct_no and A.acct_type = H.acct_type
+	Where A.rim_no = @pnRimNo and year(H.EFFECTIVE_DT) = year(@dtProcessDt)
+	union 
+	select 'Missed Loan payments on due date' as 'Description' , 3 as 'case_id' from ln_acct acct 
+	join ln_bill bill on acct.acct_type = bill.acct_type and acct.acct_no= bill.acct_no
+	where acct.status= 'Active' and bill.status != 'Satisfied'and pmt_due_dt>=Dateadd(year ,-1,@dtProcessDt) and rim_no = @pnRimNo
+	
+End
+
+if @pnConfigParam = 2
+Begin
+	Select top 12 H.acct_no, H.acct_type,
+	  substring(Convert(varchar(10),CONVERT(date,H.EFFECTIVE_DT,106),103),4,7) EFFECTIVE_DT,
+       
+		NO_OD_FEES_MTD 
+	From          
+		msphxx..DP_OD_HISTORY H 
+		inner join dp_acct A on A.acct_no = H.acct_no and A.acct_type = H.acct_type
+			Where      A.rim_no =@pnRimNo
+	and year(H.EFFECTIVE_DT) = year(@dtProcessDt)
+	order by H.effective_dt, H.ACCT_TYPE,H.ACCT_NO
+	
+	--Select 'OD applied' as 'Description', 2 as 'case_id' From
+	--DP_OD_HISTORY H inner join dp_acct A on A.acct_no = H.acct_no and A.acct_type = H.acct_type
+	--Where A.rim_no = 11603     and year(H.EFFECTIVE_DT) = 2015
+	
+End
+
+if @pnConfigParam = 3
+Begin
+	exec psp_cust_loan_payment @pnRimNo
+	
+End
+
+return 0
+
+
+IF OBJECT_ID('psp_get_cust_analysis') IS NOT NULL
+    PRINT '<<< CREATED PROCEDURE psp_get_cust_analysis >>>'
+
+ELSE
+    PRINT '<<< FAILED CREATING PROCEDURE psp_get_cust_analysis >>>'
+go
+SET ANSI_NULLS OFF
+go
+SET QUOTED_IDENTIFIER OFF
+go
+IF OBJECT_ID('dbo.psp_get_cust_analysis') IS NOT NULL
+    PRINT '<<< CREATED PROCEDURE dbo.psp_get_cust_analysis >>>'
+ELSE
+    PRINT '<<< FAILED CREATING PROCEDURE dbo.psp_get_cust_analysis >>>'
+go
+GRANT EXECUTE ON dbo.psp_get_cust_analysis TO grp_private
+go

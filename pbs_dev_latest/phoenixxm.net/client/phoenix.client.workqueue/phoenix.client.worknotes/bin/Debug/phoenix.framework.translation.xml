@@ -1,0 +1,400 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>phoenix.framework.translation</name>
+    </assembly>
+    <members>
+        <member name="T:Phoenix.FrameWork.Translation.MLLanguageResource">
+            <summary>
+            This class manages the all the resource splits for a particular langauge.
+            </summary>
+            <remarks>Maintains an array of list,object,message and translate splits and also the master resource.</remarks>
+        </member>
+        <member name="M:Phoenix.FrameWork.Translation.MLLanguageResource.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:Phoenix.FrameWork.Translation.MLLanguageResource.#ctor(System.Int32,System.String)">
+            <summary>
+            Constructor to Init for a particular language.
+            </summary>
+            <param name="languageId">Language Id</param>
+            <param name="masterAssemblyName">Master Assembly Name</param>
+        </member>
+        <member name="M:Phoenix.FrameWork.Translation.MLLanguageResource.GetResourceString(System.Int32,System.Int32,Phoenix.FrameWork.Translation.MLResourceType,System.Int32)">
+            <summary>
+            Gets the Resource string.
+            </summary>
+            <param name="languageId">Language Id for the language in which the resource string is requested.</param>
+            <param name="applicationId">Application Id to which the resource string belongs to.</param>
+            <param name="resourceType">Resource type indicating List,Object,Message or Translate</param>
+            <param name="resourceId">The resource Id of the resource requested.</param>
+            <returns>The resource string if successful else returns "" string.</returns>
+        </member>
+        <member name="M:Phoenix.FrameWork.Translation.MLLanguageResource.LoadMasterResources">
+            <summary>
+            Loads the master resource and resets all the resource splits from that master resource.
+            </summary>		
+            <returns>true if successful .</returns>
+        </member>
+        <member name="T:Phoenix.FrameWork.Translation.MLMasterResource">
+            <summary>
+            This class represents the master resource. The master resource maintains details about all the available resource splits.
+            </summary>
+        </member>
+        <member name="M:Phoenix.FrameWork.Translation.MLMasterResource.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:Phoenix.FrameWork.Translation.MLMasterResource.InitMasterResource">
+            <summary>
+            Initializes the master resource by loading the details from the master satellite assembly for a particular language.
+            </summary>		
+            <returns>true,if the master assembly can be loaded and initialized.false , if the method fails.</returns>
+        </member>
+        <member name="M:Phoenix.FrameWork.Translation.MLMasterResource.InitResourceFromMaster(System.Collections.ArrayList@,Phoenix.FrameWork.Translation.MLResourceType)">
+            <summary>
+            This method can be used to initialize an array of resource splits for a particular resource types from the master resource.
+            </summary>		
+            <param name="mlResources"></param>
+            <param name="resourceType"></param>
+            <example> <code>MLMasterResource masterResource =  new MLMasterResource();
+            				if (masterResource.InitMasterResource(Languages.ENGLISH))
+            				{
+            					ArrayList mlResources = new ArrayList() ;
+            					masterResource.InitResourceFromMaster ( out mlResources , MLResourceType.List);
+            				}
+            </code></example>		
+        </member>
+        <member name="T:Phoenix.FrameWork.Translation.MLRanges">
+            <summary>
+            Class used to define ranges for different modules.
+            </summary>
+        </member>
+        <member name="M:Phoenix.FrameWork.Translation.MLRanges.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Phoenix.FrameWork.Translation.MLRanges.#ctor(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="moduleName"></param>
+            <param name="listLowID"></param>
+            <param name="listHighID"></param>
+            <param name="screenLowID"></param>
+            <param name="screenHighID"></param>
+            <param name="messageLowID"></param>
+            <param name="messageHighID"></param>
+            <param name="translateLowID"></param>
+            <param name="translateHighID"></param>
+        </member>
+        <member name="P:Phoenix.FrameWork.Translation.MLRanges.ModuleName">
+            <summary>
+            Module name
+            </summary>
+        </member>
+        <member name="P:Phoenix.FrameWork.Translation.MLRanges.ListLowID">
+            <summary>
+            Lowest list value in this range
+            </summary>
+        </member>
+        <member name="P:Phoenix.FrameWork.Translation.MLRanges.ListHighID">
+            <summary>
+            Highest list value in this range.
+            </summary>
+        </member>
+        <member name="P:Phoenix.FrameWork.Translation.MLRanges.ScreenLowID">
+            <summary>
+            Loweest screen id in this range.
+            </summary>
+        </member>
+        <member name="P:Phoenix.FrameWork.Translation.MLRanges.ScreenHighID">
+            <summary>
+            Highest screen Id in this range
+            </summary>
+        </member>
+        <member name="P:Phoenix.FrameWork.Translation.MLRanges.MessageLowID">
+            <summary>
+            Lowest message Id in this range
+            </summary>
+        </member>
+        <member name="P:Phoenix.FrameWork.Translation.MLRanges.MessageHighID">
+            <summary>
+            Highest message Id in this range
+            </summary>
+        </member>
+        <member name="P:Phoenix.FrameWork.Translation.MLRanges.TranslateLowID">
+            <summary>
+            Lowest translate in this range
+            </summary>
+        </member>
+        <member name="P:Phoenix.FrameWork.Translation.MLRanges.TranslateHighID">
+            <summary>
+            Highest translate in this range
+            </summary>
+        </member>
+        <member name="M:Phoenix.FrameWork.Translation.MLRanges.Contains(Phoenix.FrameWork.Translation.MLResourceType,System.Int32)">
+            <summary>
+            Checks whether the resource is within the range.
+            </summary>
+            <param name="resType"></param>
+            <param name="resourceID"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Phoenix.FrameWork.Translation.MLResource">
+            <summary>
+            This class represents a single resource split which can be used represent a list,object,message or translate resource.
+            </summary>
+        </member>
+        <member name="M:Phoenix.FrameWork.Translation.MLResource.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:Phoenix.FrameWork.Translation.MLResource.#ctor(Phoenix.FrameWork.Translation.MLResourceType,System.Int32,System.Int32,System.Int32,System.Int32,System.String)">
+            <summary>
+            Initializing constructor. Useful when adding this element to an array list etc.
+            </summary>
+            <param name="ResourceType">The resource type.</param>
+            <param name="applD">Application Id.</param>
+            <param name="LowId">The lowest resource Id contained in this resource assembly.</param>
+            <param name="HighId">The highest resource Id contained in this resource assembly.0 means maximum</param>
+            <param name="Count">The number of actual resources contained in this assembly.</param>
+            <param name="AssemblyName">The name of the satellite assembly containing the resources.</param>
+        </member>
+        <member name="M:Phoenix.FrameWork.Translation.MLResource.GetResourceString(System.Int32)">
+            <summary>
+            This method will return the resource string for the resource Id requested.
+            </summary>
+            <param name="resourceId">Id of the string resource requested.</param>
+            <returns>Returns the resource string if the resource with the Id passed in is found.Retunrs "" if the resource is not found.</returns>
+        </member>
+        <member name="M:Phoenix.FrameWork.Translation.MLResource.ContainsSplit(System.Int32,System.Int32)">
+            <summary>
+            This method checks whether the resource indicated by the application Id, resourceId is present in this particular split.
+            </summary>
+            <param name="applicationId">Application Id.</param>
+            <param name="resourceId">The resource Id to be checked.</param>
+            <returns>true, if the resource is present in this split else returns false.</returns>
+        </member>
+        <member name="T:Phoenix.FrameWork.Translation.MLResourceType">
+            <summary>
+            The type of ML resource	
+            </summary>	
+        </member>
+        <member name="F:Phoenix.FrameWork.Translation.MLResourceType.List">
+            <summary>
+            ML List Resource
+            </summary>
+        </member>
+        <member name="F:Phoenix.FrameWork.Translation.MLResourceType.Message">
+            <summary>
+             ML Message resource
+            </summary>
+        </member>
+        <member name="F:Phoenix.FrameWork.Translation.MLResourceType.Object">
+            <summary>
+            Represents both screens and their objects
+            </summary>
+        </member>
+        <member name="F:Phoenix.FrameWork.Translation.MLResourceType.Translate">
+            <summary>
+            ML translation resource
+            </summary>
+        </member>
+        <member name="T:Phoenix.FrameWork.Translation.MLSplitAdjuster">
+             <summary>
+             An helper Enum that has the normalizing value for object and translate resources.
+             </summary>
+            <remarks>
+            This is used such that we can reference the ScreenId, ObjectId combination using a single resourceID in the satellite assembly.
+            </remarks>
+        </member>
+        <member name="F:Phoenix.FrameWork.Translation.MLSplitAdjuster.Object">
+            <summary>
+            Form the actual resource Object ID as ScreenId* MLSplitAdjuster.Object + ObjectId
+            </summary>
+        </member>
+        <member name="F:Phoenix.FrameWork.Translation.MLSplitAdjuster.Translate">
+            <summary>
+            Form the actual resource Translate ID as ScreenId* MLSplitAdjuster.Object + TranslateId
+            </summary>
+        </member>
+        <member name="T:Phoenix.FrameWork.Translation.MLService">
+            <summary>
+            This is the core translation class. This implements all the methods exposed by the ITranslate interface.
+            </summary>
+            <remarks>Maintains an Array of MLLangResource class elements named _languageResources. Each index corresponds to a particular language.</remarks>
+        </member>
+        <member name="M:Phoenix.FrameWork.Translation.MLService.#ctor">
+            <summary>
+            Default Constructor.
+            </summary>
+        </member>
+        <member name="M:Phoenix.FrameWork.Translation.MLService.#ctor(System.Int32)">
+            <summary>
+            LanguageId Constructor.
+            </summary>
+        </member>
+        <member name="F:Phoenix.FrameWork.Translation.MLService.Delimiter">
+            <summary>
+            Delimiter when combining items into a single string.
+            </summary>
+        </member>
+        <member name="P:Phoenix.FrameWork.Translation.MLService.BaseLanguageId">
+            <summary>
+            Implementation of ITranslate->BaseLanguageId
+            </summary>
+        </member>
+        <member name="M:Phoenix.FrameWork.Translation.MLService.GetUIContainerInfo(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Implementation of ITranslate->GetUIContainerInfo
+            </summary>
+            <param name="languageId"></param>
+            <param name="applicationId"></param>
+            <param name="screenId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Phoenix.FrameWork.Translation.MLService.GetUIControlInfo(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Implementation of ITranslate->GetUIControlInfo
+            </summary>
+            <param name="languageId"></param>
+            <param name="applicationId"></param>
+            <param name="screenId"></param>
+            <param name="objectId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Phoenix.FrameWork.Translation.MLService.GetUserMessage(System.Int32,System.Int32)">
+            <summary>
+            Implementation of ITranslate->GetUserMessage
+            </summary>
+            <param name="languageId"></param>		
+            <param name="messageId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Phoenix.FrameWork.Translation.MLService.GetUserMessageX(System.Int32)">
+            <summary>
+            Implementation of ITranslate->GetUserMessageX
+            </summary>		
+            <param name="messageId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Phoenix.FrameWork.Translation.MLService.GetTokenizeMessage(System.Int32,System.Int32,System.String[])">
+            <summary>
+            Implementation of ITranslate->GetTokenizeMessage
+            </summary>
+            <param name="languageId"></param>		
+            <param name="messageId"></param>
+            <param name="messageInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Phoenix.FrameWork.Translation.MLService.GetTokenizeMessageX(System.Int32,System.String[])">
+            <summary>
+             Implementation of ITranslate->GetTokenizeMessageX
+            </summary>		
+            <param name="messageId"></param>
+            <param name="messageInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Phoenix.FrameWork.Translation.MLService.GetTranslate(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Implementation of ITranslate->GetTranslate
+            </summary>
+            <param name="languageId"></param>		
+            <param name="screenId"></param>
+            <param name="translateId"></param>
+            <returns></returns>		
+        </member>
+        <member name="M:Phoenix.FrameWork.Translation.MLService.GetTranslateX(System.Int32,System.Int32)">
+            <summary>
+            Implementation of ITranslate->GetTranslateX
+            </summary>		
+            <param name="screenId"></param>
+            <param name="translateId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Phoenix.FrameWork.Translation.MLService.GetTokenizeTranslate(System.Int32,System.Int32,System.Int32,System.String[])">
+            <summary>
+            Implementation of ITranslate->GetTokenizeTranslate
+            </summary>
+            <param name="languageId"></param>		
+            <param name="screenId"></param>
+            <param name="translateId"></param>
+            <param name="translateInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Phoenix.FrameWork.Translation.MLService.GetTokenizeTranslateX(System.Int32,System.Int32,System.String[])">
+            <summary>
+            Implementation of ITranslate->GetTokenizeTranslateX
+            </summary>		
+            <param name="screenId"></param>
+            <param name="translateId"></param>
+            <param name="translateInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Phoenix.FrameWork.Translation.MLService.GetList(System.Int32,System.Int32)">
+            <summary>
+            Implementation of ITranslate->GetList
+            </summary>
+            <param name="languageId"></param>		
+            <param name="listId"></param>
+            <returns></returns>		
+        </member>
+        <member name="M:Phoenix.FrameWork.Translation.MLService.GetListX(System.Int32)">
+            <summary>
+            Implementation of ITranslate->GetListX
+            </summary>		
+            <param name="listId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Phoenix.FrameWork.Translation.MLService.GetListItem(System.Int32,System.Int32,System.Int32,System.String)">
+            <summary>
+            Implementation of ITranslate->GetListItem
+            </summary>
+            <param name="sourceLanguageId"></param>
+            <param name="targetLanguageId"></param>		
+            <param name="listId"></param>
+            <param name="listItemText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Phoenix.FrameWork.Translation.MLService.GetListItemX(System.Int32,System.String)">
+            <summary>
+            Implementation of ITranslate->GetListItemX
+            </summary>		
+            <param name="listId"></param>
+            <param name="listItemText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Phoenix.FrameWork.Translation.MLService.GetListDecodeValue(System.Int32,System.Int32,System.Int32,System.String)">
+            <summary>
+            This method shall translate and return the decode value in the language requested (targetLanguageId) given the value for the codeValue in the sourceLanguageId.		
+            <seealso cref="M:Phoenix.FrameWork.Translation.MLService.GetListDecodeValue(System.Int32,System.Int32,System.Int32,System.String)"/>		
+            </summary>
+            <param name="sourceLanguageId">The Language in which the codeValue parameter is being supplied.</param>
+            <param name="targetLanguageId">The Language to which the codeValue parameter must be translated.</param>		
+            <param name="listId">The List Id of the list to which the item specified in codeValue belongs to.</param>
+            <param name="codeValue">The list item which is to be translated</param>
+            <returns>Returns the decode value in the target language specified</returns>		
+            <example> <code>decodeValueText = GetListDecodeValue ( 1, 2, 100 , "Active"); </code></example>
+        </member>
+        <member name="M:Phoenix.FrameWork.Translation.MLService.GetListDecodeValueX(System.Int32,System.String)">
+            <summary>
+            This method shall translate and return the decode value in the base language (BaseLanguageId property) given the value for codeValue in English =1.
+            </summary>		
+            <param name="listId">The List Id of the list to which the item specified in codeValue belongs to.</param>		
+            <param name="codeValue">The list item which is to be translated, this is in English = 1</param>
+            <returns>Returns the decode value in the Base Language specified</returns>
+            <example> <code>decodeValueText = GetListItemX ( 100, "Active") </code></example>
+        </member>
+        <member name="M:Phoenix.FrameWork.Translation.MLService.InitMLRanges">
+            <summary>
+            Change this function whenever we had a new codeline release. If the range does not belong to any of these, the main phoenix codeline is used.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="15.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E08319B9-59C6-4951-9AFF-1E6877609DAF}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>phoenix.client.referral</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Phoenix.Client.WorkQueue</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="phoenix.busobj.adwqcategory, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="phoenix.busObj.gbhelper">
+      <Name>phoenix.busObj.gbhelper</Name>
+      <AssemblyFolderKey>hklm\sharkassemblies</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="phoenix.busobj.gbworkqueue">
+      <Name>phoenix.busobj.gbworkqueue</Name>
+      <AssemblyFolderKey>hklm\sharkassemblies</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="phoenix.busobj.gbworkqueuenote, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="phoenix.busobj.wquserdefval, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="phoenix.client.dplnuserdefval, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="phoenix.client.helper">
+      <Name>phoenix.client.helper</Name>
+      <AssemblyFolderKey>hklm\sharkassemblies</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="phoenix.frameWork.authentication">
+      <Name>phoenix.frameWork.authentication</Name>
+      <AssemblyFolderKey>hklm\sharkassemblies</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="phoenix.framework.busframe">
+      <Name>phoenix.framework.busframe</Name>
+      <AssemblyFolderKey>hklm\sharkassemblies</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="phoenix.framework.CDS">
+      <Name>phoenix.framework.CDS</Name>
+      <AssemblyFolderKey>hklm\sharkassemblies</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="phoenix.framework.core">
+      <Name>phoenix.framework.core</Name>
+      <AssemblyFolderKey>hklm\sharkassemblies</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="phoenix.framework.shared.variables">
+      <Name>phoenix.framework.shared.variables</Name>
+      <AssemblyFolderKey>hklm\sharkassemblies</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="phoenix.shared.constants">
+      <Name>phoenix.shared.constants</Name>
+      <AssemblyFolderKey>hklm\sharkassemblies</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="Phoenix.Shared.Utility, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL" />
+    <Reference Include="phoenix.shared.variables">
+      <Name>phoenix.shared.variables</Name>
+      <AssemblyFolderKey>hklm\sharkassemblies</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="phoenix.shared.variables.teller">
+      <Name>phoenix.shared.variables.teller</Name>
+      <AssemblyFolderKey>hklm\sharkassemblies</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="Phoenix.Shared.Windows, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5782ecf393b4839c, processorArchitecture=MSIL" />
+    <Reference Include="phoenix.windows.forms">
+      <Name>phoenix.windows.forms</Name>
+      <AssemblyFolderKey>hklm\sharkassemblies</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\common\commonassemblyinfo.cs">
+      <Link>commonassemblyinfo.cs</Link>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="frmReferral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReferralEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="frmReferral.resx">
+      <DependentUpon>frmReferral.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReferralEdit.resx">
+      <DependentUpon>frmReferralEdit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties CopyToWsvcsbin="True" CopyToOutDir="True" />
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>
